@@ -2,24 +2,24 @@ apiVersion: eksctl.io/v1alpha5
 kind: ClusterConfig
 
 metadata:
-  name: cwvj-eks-cluster
-  region: us-east-2
+  name: my-cluster
+  region: ap-south-1
   tags:
-    owner: varun-joshi
-    bu: cwvj
+    owner: HarishNShetty
+    bu: hns
     environment: prod
-    project: statefulsets-training
+    project: statefulsets-demo
 
 availabilityZones:
-  - us-east-2a
-  - us-east-2b
-  - us-east-2c
+  - ap-south-1a
+  - ap-south-1b
+  - ap-south-1c
 
 iam:
   withOIDC: true
 
 managedNodeGroups:
-  - name: cwvj-eks-priv-ng
+  - name: Worker-Node-Group
     instanceType: t3.small
     minSize: 4
     maxSize: 5
